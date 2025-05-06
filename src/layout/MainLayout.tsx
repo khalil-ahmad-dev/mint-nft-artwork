@@ -7,7 +7,7 @@ import { Outlet } from 'react-router-dom';
 import { useActiveAccount, useActiveWalletChain } from 'thirdweb/react';
 
 const MainLayout = () => {
-  const { profile, setProfile } = useArtworkStore((state) => state);
+  const { setProfile } = useArtworkStore((state) => state);
 
   const activeAccount = useActiveAccount();
   const activeChain = useActiveWalletChain();

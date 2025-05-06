@@ -17,7 +17,7 @@ const initialState: IMintArtworkStore = {
 };
 
 export const useArtworkStore = create<IMintArtworkStore>(
-  (set, get): IMintArtworkStore => ({
+  (set): IMintArtworkStore => ({
     ...initialState,
     setProfile: (profile: IProfile) =>
       set((state) => setProfileHelper(state, profile)),

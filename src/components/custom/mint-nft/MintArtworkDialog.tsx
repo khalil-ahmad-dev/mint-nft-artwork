@@ -27,7 +27,7 @@ import {
 import { useState } from "react";
 import { handleShowNotificationToast } from "@/lib/helpers";
 import { useActiveAccount } from "thirdweb/react";
-import { estimateGas, getContract, keccak256, prepareContractCall, sendTransaction, toBytes, simulateTransaction, waitForReceipt } from "thirdweb";
+import { getContract, keccak256, prepareContractCall, sendTransaction, toBytes, waitForReceipt } from "thirdweb";
 import { Environment } from "@/config";
 import { currentChain, thirdWebClient } from "@/lib/thirdwebClient";
 
@@ -80,9 +80,7 @@ const MintArtworkDialog = ({ open, setOpen }: IProp) => {
     watch,
     handleSubmit,
     setValue,
-    resetField,
-    reset,
-    formState: { errors },
+    reset
   } = form;
 
   const { fields, append, remove } = useFieldArray({
