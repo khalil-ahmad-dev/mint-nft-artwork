@@ -1,5 +1,3 @@
-"use client";
-
 import { Gavel, Minus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {

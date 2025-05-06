@@ -4,6 +4,7 @@ import { useArtworkStore } from '@/store/mint-artwork';
 import type { IProfile } from '@/types/artwork.types';
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
+import type { Address } from 'thirdweb';
 import { useActiveAccount, useActiveWalletChain } from 'thirdweb/react';
 
 const MainLayout = () => {
@@ -23,7 +24,6 @@ const MainLayout = () => {
         iconUrl: '',
         symbol: '',
       }
-
     };
 
     if (activeAccount && activeChain) {
@@ -35,6 +35,7 @@ const MainLayout = () => {
       latestProfile.network.iconUrl = activeChain.icon?.url ?? '';
       latestProfile.network.name = activeChain.name ?? '';
       latestProfile.network.symbol = activeChain.nativeCurrency?.symbol ?? '';
+      latestProfile.address = (activeAccount.address ?? '') as Address;
     }
 
     setProfile(latestProfile);

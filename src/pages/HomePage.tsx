@@ -1,5 +1,6 @@
 import MintArtworkDialog from '@/components/custom/mint-nft/MintArtworkDialog';
 import { Button } from '@/components/ui/button';
+import { Environment } from '@/config';
 import { handleShowNotificationToast } from '@/lib/helpers';
 import { useArtworkStore } from '@/store/mint-artwork';
 import { useState } from 'react';
@@ -37,6 +38,26 @@ const HomePage = () => {
 
         <Button variant="default" onClick={handleOpenMintArtworkDialog} >Mint Artwork</Button>
       </header>
+
+      <div className='grid grid-cols-2 gap-6' >
+        <Button
+          className='col-span-1'
+          variant="outline"
+          onClick={() => window.open(`https://sepolia.etherscan.io/address/${Environment.SMART_CONTRACT_ADDRESS}`)}
+        >
+          <img src="/assets/etherscan.svg" className='size-4' alt="" />
+          <span>View Transactions</span>
+        </Button>
+
+        <Button
+          className='col-span-1'
+          variant="outline"
+          onClick={() => window.open(`https://testnets.opensea.io/${profile.address}`)}
+        >
+          <img src="/assets/opensea.svg" className='size-4' alt="" />
+          <span>View NFT Assets Owned</span>
+        </Button>
+      </div>
 
       <MintArtworkDialog
         open={openMintArtworkDialog}
