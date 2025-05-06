@@ -28,10 +28,10 @@ const HomePage = () => {
   return (
     <div className='space-y-2' >
 
-      <header className='flex items-center justify-between my-10' >
+      <header className='flex flex-col gap-6 lg:gap-0 lg:flex-row lg:items-center lg:justify-between my-10' >
         <div>
           <h2 className='font-bold text-2xl text-primary' >Mint Your NFT Artwork</h2>
-          <p className='text-muted-foreground w-2/3' >
+          <p className='text-muted-foreground lg:w-2/3' >
             Start the minting process by clicking the <span className='text-primary font-bold'>Mint</span> button. Provide the necessary details—such as the title, description, and artwork file. Once completed, your NFT will be securely minted and instantly delivered to your wallet</p>
         </div>
 
@@ -39,7 +39,7 @@ const HomePage = () => {
         <Button variant="default" onClick={handleOpenMintArtworkDialog} >Mint Artwork</Button>
       </header>
 
-      <div className='grid grid-cols-2 gap-6' >
+      <div className='grid lg:grid-cols-2 gap-6' >
         <Button
           className='col-span-1'
           variant="outline"
