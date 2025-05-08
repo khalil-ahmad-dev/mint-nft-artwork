@@ -1,4 +1,4 @@
-import { thirdWebClient } from "@/lib/thirdwebClient";
+import { currentChain, thirdWebClient } from "@/lib/thirdwebClient";
 import { ConnectButton } from "thirdweb/react";
 import { createWallet } from "thirdweb/wallets";
 
@@ -21,6 +21,7 @@ const Navbar = () => {
       <ConnectButton
         client={thirdWebClient}
         wallets={wallets}
+        chain={currentChain}
       />
     </nav>
   );

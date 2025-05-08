@@ -32,7 +32,7 @@ const HomePage = () => {
         <div>
           <h2 className='font-bold text-2xl text-primary' >Mint Your NFT Artwork</h2>
           <p className='text-muted-foreground lg:w-2/3' >
-            Start the minting process by clicking the <span className='text-primary font-bold'>Mint</span> button. Provide the necessary details—such as the title, description, and artwork file. Once completed, your NFT will be securely minted and instantly delivered to your wallet</p>
+            Start the minting process by clicking the <span className='text-primary font-bold'>Mint</span> button. Provide the necessary details—such as the NFT name, artist, Metadata URL, Total Shares, Initial Owners and their Shares. Once completed, your NFT will be securely minted and instantly delivered to your wallet.</p>
         </div>
 
 
