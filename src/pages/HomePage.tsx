@@ -4,12 +4,14 @@ import { Environment } from '@/config';
 import { handleShowNotificationToast } from '@/lib/helpers';
 import { useArtworkStore } from '@/store/mint-artwork';
 import { useState } from 'react';
+// import { Wallet } from "ethers";
 
 
 const HomePage = () => {
   const { profile } = useArtworkStore(state => state);
 
   const [openMintArtworkDialog, setMintArtworkDialog] = useState(false);
+
   const handleOpenMintArtworkDialog = () => {
 
     if (!profile.isConnected) {
@@ -24,6 +26,17 @@ const HomePage = () => {
     setMintArtworkDialog(true);
 
   };
+
+
+  // const handleCreateWallet = () => {
+  //   console.log("button clicked ");
+  //   // Generate a new random wallet
+  //   const wallet = Wallet.createRandom();
+
+  //   console.log("Address:     ", wallet.address);
+  //   console.log("Private Key: ", wallet.privateKey);
+  //   console.log("Wallet:  ", wallet);
+  // };
 
   return (
     <div className='space-y-2' >
@@ -58,6 +71,11 @@ const HomePage = () => {
           <span>View NFT Assets Owned</span>
         </Button>
       </div>
+
+
+      {/* <div>
+        <Button className='w-full' onClick={handleCreateWallet} >Click me to create a wallet</Button>
+      </div> */}
 
       <MintArtworkDialog
         open={openMintArtworkDialog}

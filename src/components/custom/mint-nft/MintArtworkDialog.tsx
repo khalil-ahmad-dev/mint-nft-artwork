@@ -127,8 +127,9 @@ const MintArtworkDialog = ({ open, setOpen }: IProp) => {
 
       const preparedTransaction = prepareContractCall({
         contract: artContract,
-        method: `function createArtwork(string name, string artist, uint256 totalShares, string url, bytes32 artworkHash, address[] initialOwners, uint256[] shareAmounts)`,
+        method: `function createArtwork(string artworkId, string name, string artist, uint256 totalShares, string url, bytes32 artworkHash, address[] initialOwners, uint256[] shareAmounts)`,
         params: [
+          `${values.name.trim()}-${values.artist.trim()}`,
           values.name || "Test NFT Artwork",
           values.artist || 'Test Artist',
           BigInt(Number(values.totalShares) || 1),
